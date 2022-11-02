@@ -3,13 +3,14 @@ import { storage } from './storage.service.js'
 export const locService = {
   getLocs,
   addPlace,
+  getPlaceById
 }
 
 const STORAGE_KEY_PLACES = 'places'
 
 const locs = [
   {
-    id: 1,
+    id: utils.makeId(),
     name: 'Greatplace',
     lat: 32.047104,
     lng: 34.832384,
@@ -18,7 +19,7 @@ const locs = [
     updatedAt: null,
   },
   {
-    id: 2,
+    id: utils.makeId(),
     name: 'Neveragain',
     lat: 32.047201,
     lng: 34.832581,

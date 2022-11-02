@@ -3,7 +3,7 @@ import { mapService } from './services/map.service.js'
 
 window.onload = onInit
 window.onAddMarker = onAddMarker
-window.onPanTo = onPanTo
+window.onPanToPlace = onPanToPlace
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 
@@ -18,7 +18,6 @@ function onInit() {
 
 // This function provides a Promise API to the callback-based-api of getCurrentPosition
 function getPosition() {
-    console.log('Getting Pos')
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })
@@ -46,9 +45,12 @@ function onGetUserPos() {
         })
 }
 
-function onPanTo() {
+function onPanToPlace(id) {
     console.log('Panning the Map')
-    mapService.panTo(35.6895, 139.6917)
+    const place = locService.getPlaceById(id)
+    console.log('place',place);
+    mapService.panTo(place.lat, place.lng)
+    // mapService.panTo(35.6895, 139.6917)
 }
 
 //////
