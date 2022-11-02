@@ -38,6 +38,7 @@ function onGetUserPos() {
   getPosition()
     .then((pos) => {
       console.log('User position is:', pos.coords)
+      mapService.panTo(pos.coords.latitude, pos.coords.longitude)
       document.querySelector(
         '.user-pos'
       ).innerText = `Latitude: ${pos.coords.latitude} - Longitude: ${pos.coords.longitude}`
@@ -82,9 +83,8 @@ function renderPlaces(places) {
 
 function onRemovePlace(placeId) {
   console.log('placeId', placeId)
-  removePlace(placeId)
-  renderPlaces()
-  renderMarkers()
+  locService.removePlace(placeId)
+  locService.getLocs().then(renderPlaces)
 }
 
 function onGetGeoCode() {
