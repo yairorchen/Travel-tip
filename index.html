@@ -4,13 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>TravelTip</title>
 </head>
 
 <body>
-    <h1>TravelTip Starter</h1>
-    <h2>hero hero</h2>
-    <div id="map" style="width: 100%; height: 400px;"></div>
+    <header>
+        <h1>TravelTip</h1>
+        <nav>
+            <input class="type-search" type="text">
+            <button class="btn">GO</button>
+            <button class="btn">My Location</button>
+        </nav>
+    </header>
+    <div class="secondary-header">
+        <div class="curr-info">
+            <h3>location:</h3>
+            <h4>central park new york</h4>
+        </div>
+        <button class="btn"> Copy Location</button>
+    </div>
+    <main>
+        <div id="map" style="width: 45%; height: 400px;"></div>
+        <div class="location-data">
+            <div class="weather-location box"> Weather Location</div>
+            <div class="location-list box">
+                <h3>location table:</h3>
+                <h5>lalala</h5>
+                <h5>ladsds</h5>
+                <h5>lalgfdg</h5>
+            </div>
+        </div>
+    </main>
+
+
+
     <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
     <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
     <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
