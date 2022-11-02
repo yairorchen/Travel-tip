@@ -12,9 +12,10 @@
     <header>
         <h1>TravelTip</h1>
         <nav>
-            <input class="type-search" type="text">
+            <input class="type-search" type="text" placeholder="Search Location:">
             <button class="btn" onclick="onGetGeoCode()">GO</button>
             <button class="btn my-location" onclick="onGetUserPos()">My Location</button>
+            <button onclick="onGetLocs()" class="btn btn-get-locs">Get Locations</button>
         </nav>
     </header>
     <div class="secondary-header">
@@ -27,17 +28,22 @@
     <main>
         <div id="map" style="width: 45%; height: 400px;"></div>
         <div class="location-data">
-            <div class="weather-location box"> Weather Location</div>
-            <div class="place-list box">
+            <div class="weather-location box">
+                <h3>Weather Location:</h3>
+            </div>
+            <div class="box">
                 <h3>location table:</h3>
+                <div class="place-list">
 
+
+                </div>
             </div>
         </div>
     </main>
 
 
 
-    <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+
 
 
     <script type="module" src="js/services/storage.service.js"></script>
