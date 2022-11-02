@@ -27,6 +27,7 @@ function getClickedLoc() {
     const lat = ev.latLng.lat()
     const lng = ev.latLng.lng()
     let name = 'moamar kadafi'
+    mapService.addMarker({ lat, lng })
     locService.addPlace(name, lat, lng, gMap.getZoom())
     setCenterToUserLoc(lat, lng)
   })
@@ -44,6 +45,7 @@ function addMarker(loc) {
   })
   return marker
 }
+
 
 function panTo(lat, lng) {
   var laLatLng = new google.maps.LatLng(lat, lng)
