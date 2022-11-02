@@ -1,4 +1,6 @@
 const GOOGLE_MAP_API = 'AIzaSyBbCHGgupyDxN223JEZ1I4DBfPo9g8AF_o'
-export const api = { 
-    GOOGLE_MAP_API
+const GOOGLE_MAP_GEOCODE = 'AIzaSyA9zE4S9LdhZmuisVBNjAlxdApQklyQb2U'
+export const api = {
+  GOOGLE_MAP_GEOCODE,
+  GOOGLE_MAP_API,
 }

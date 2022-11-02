@@ -63,3 +63,13 @@ function _connectGoogleApi() {
     elGoogleApi.onerror = () => reject('Google script failed to load')
   })
 }
+
+_getGeoCode()
+function _getGeoCode(name = 'Tokyo') {
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${name}&key=${api.GOOGLE_MAP_GEOCODE}`
+  return fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res)
+    })
+}
