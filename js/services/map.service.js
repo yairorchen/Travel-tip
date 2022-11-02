@@ -4,6 +4,7 @@ export const mapService = {
     panTo
 }
 
+const API_KEY = 'AIzaSyBbCHGgupyDxN223JEZ1I4DBfPo9g8AF_o'
 
 // Var that is used throughout this Module (not global)
 var gMap
