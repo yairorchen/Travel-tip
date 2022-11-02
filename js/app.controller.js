@@ -30,10 +30,7 @@ function onAddMarker() {
 }
 
 function onGetLocs() {
-    locService.getLocs().then((locs) => {
-        console.log('Locations:', locs)
-        document.querySelector('.locs').innerText = JSON.stringify(locs, null, 2)
-    })
+    locService.getLocs().then(renderPlaces)
 }
 
 function onGetUserPos() {
@@ -56,17 +53,16 @@ function onPanTo() {
 
 //////
 
-function renderPlaces() {
-    const places = getLocs()
+function renderPlaces(places) {
     console.log('places', places);
     const elList = document.querySelector('.place-list')
     const strHtmls = places
         .map(({ id, name }) => {
             return `
-        <li class="flex clean-list">
-        <h1>${name}</h1>
-        <button onclick="onPanToPlace('${id}')">GO</button>
-        <button onclick="onRemovePlace('${id}')">X</button>
+        <li class="flex justify-between clean-list">
+        <h3>${name}</h3>
+        <button class="go-btn" onclick="onPanToPlace('${id}')">GO</button>
+        <button class="x-btn" onclick="onRemovePlace('${id}')">X</button>
       </li>
         `
         })
