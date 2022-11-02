@@ -4,6 +4,7 @@ export const mapService = {
   initMap,
   addMarker,
   panTo,
+  getGeoCode,
 }
 
 // Var that is used throughout this Module (not global)
@@ -64,16 +65,16 @@ function _connectGoogleApi() {
   })
 }
 
-<<<<<<< HEAD
-_getGeoCode()
-function _getGeoCode(name = 'Tokyo') {
+// getGeoCode()
+function getGeoCode(name = 'Tokyo') {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${name}&key=${api.GOOGLE_MAP_GEOCODE}`
   return fetch(url)
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
+      let name = res.results[0].formatted_address
+      let lat = res.results[0].geometry.location.lat
+      let lng = res.results[0].geometry.location.lng
+      panTo(lat, lng)
+      return name
     })
 }
-=======
-
->>>>>>> 228fd1c58dda7dc1b872b61cef8dcd413d3854ab
