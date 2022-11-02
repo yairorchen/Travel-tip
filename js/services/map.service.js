@@ -64,6 +64,7 @@ function _connectGoogleApi() {
   })
 }
 
+<<<<<<< HEAD
 _getGeoCode()
 function _getGeoCode(name = 'Tokyo') {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${name}&key=${api.GOOGLE_MAP_GEOCODE}`
@@ -73,3 +74,6 @@ function _getGeoCode(name = 'Tokyo') {
       console.log(res)
     })
 }
+=======
+
+>>>>>>> 228fd1c58dda7dc1b872b61cef8dcd413d3854ab
