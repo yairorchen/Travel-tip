@@ -1,9 +1,9 @@
+import { api } from "./secret-file.js"
 export const mapService = {
   initMap,
   addMarker,
   panTo,
 }
-
 // Var that is used throughout this Module (not global)
 var gMap
 
@@ -35,9 +35,8 @@ function panTo(lat, lng) {
 
 function _connectGoogleApi() {
   if (window.google) return Promise.resolve()
-  const API_KEY = 'AIzaSyBbCHGgupyDxN223JEZ1I4DBfPo9g8AF_o'
   var elGoogleApi = document.createElement('script')
-  elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`
+  elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${api.GOOGLE_MAP_API}`
   elGoogleApi.async = true
   document.body.append(elGoogleApi)
 
